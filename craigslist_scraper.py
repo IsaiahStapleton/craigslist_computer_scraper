@@ -65,6 +65,13 @@ result = pd.DataFrame({'Title': post_titles,
                        'Town': post_towns,
                        'Link': post_links})
 
-print(result.head())
+
+writer = pd.ExcelWriter('computerData.xlsx')
+
+result.to_excel(writer)
+
+writer.save()
+
+print("DataFrame was written successfully to Excel File")
 
 
